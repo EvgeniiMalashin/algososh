@@ -2,12 +2,13 @@ import React, { ChangeEvent, FormEvent, useState } from "react";
 import { Input, } from "../ui/input/input";
 import { Button } from "../ui/button/button";
 import { SolutionLayout } from "../ui/solution-layout/solution-layout";
+import { Circle } from "../ui/circle/circle";
+import { DELAY_IN_MS } from "../../constants/delays";
 import styles from "./string.module.css";
 import { ElementStates } from "../../types/element-states";
-import { Circle } from "../ui/circle/circle";
-import { swap, delay } from "../../constants/my-constants";
 import { TItem } from "../../types/my-types";
-import { DELAY_IN_MS } from "../../constants/delays";
+import { swap, delay } from "../../constants/my-constants";
+
 
 export const StringComponent: React.FC = () => {
   const [inputValue, setInputValue] = useState('');
