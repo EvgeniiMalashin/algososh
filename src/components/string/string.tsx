@@ -12,15 +12,15 @@ import { DELAY_IN_MS } from "../../constants/delays";
 export const StringComponent: React.FC = () => {
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [array, setArray] = useState<TItem[]>([]);
+  const [arr, setArr] = useState<TItem[]>([]);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
   };
 
-  const reverseString = async (inputArray: TItem[]) => {
+  const reverseString = async (inputArr: TItem[]) => {
     setIsLoading(true);
-    setArray([...inputArray]);
+    setArr([...inputArr]);
 
     await delay(DELAY_IN_MS);
 
@@ -29,19 +29,19 @@ export const StringComponent: React.FC = () => {
 
     while (start <= end) {
       if (start === end) {
-        inputArray[start].color = ElementStates.Modified;
-        setArray([...inputArray]);
+        inputArr[start].color = ElementStates.Modified;
+        setArr([...inputArr]);
       } else {
-        inputArray[start].color = ElementStates.Changing;
-        inputArray[end].color = ElementStates.Changing;
-        setArray([...inputArray]);
+        inputArr[start].color = ElementStates.Changing;
+        inputArr[end].color = ElementStates.Changing;
+        setArr([...inputArr]);
 
         await delay(DELAY_IN_MS);
-        swap(inputArray, start, end);
+        swap(inputArr, start, end);
 
-        inputArray[start].color = ElementStates.Modified;
-        inputArray[end].color = ElementStates.Modified;
-        setArray([...inputArray]);
+        inputArr[start].color = ElementStates.Modified;
+        inputArr[end].color = ElementStates.Modified;
+        setArr([...inputArr]);
 
         await delay(DELAY_IN_MS);
       }
@@ -77,7 +77,7 @@ export const StringComponent: React.FC = () => {
         />
       </form>
       <div className={styles.container}>
-        {array.map((item, index) => (
+        {arr.map((item, index) => (
           <Circle letter={item.value} key={index} state={item.color} />
         ))}
       </div>
