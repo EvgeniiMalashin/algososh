@@ -1,0 +1,20 @@
+.form {
+    display: flex;
+    justify-content: center;
+    max-width: 829px;
+    margin: 0 auto;
+}
+
+.container {
+    display: flex;
+    width: 630px;
+    gap: 12px;
+    margin-right: 80px;
+}
+
+.circle {
+    display: flex;
+    justify-content: center;
+    margin-top: 120px;
+    gap: 16px;
+}
