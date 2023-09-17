@@ -54,12 +54,13 @@ export const SortingPage: React.FC = () => {
           setArr([...arr]);
         }
         arr[j].color = ElementStates.Default;
-        arr[i].color = ElementStates.Default;
         setArr([...arr]);
       }
+      arr[i].color = ElementStates.Default;
       arr[temp].color = ElementStates.Modified;
       swap(arr, i, temp);
       setArr([...arr]);
+
     }
     setIsLoading({ isLoading: false, isAscending: false, isDescending: false });
   };
@@ -70,21 +71,19 @@ export const SortingPage: React.FC = () => {
     } else {
       setIsLoading({ isLoading: true, isAscending: false, isDescending: true });
     }
-
     for (let i = 0; i < arr.length; i++) {
       for (let j = 0; j < arr.length - i - 1; j++) {
         arr[j].color = ElementStates.Changing;
         arr[j + 1].color = ElementStates.Changing;
         await delay(DELAY_IN_MS);
-
         if ((sort === Direction.Ascending) && (arr[j].value > arr[j + 1].value)) {
           swap(arr, j, j + 1);
         } else if ((sort === Direction.Descending) && (arr[j].value < arr[j + 1].value)) {
           swap(arr, j, j + 1);
         }
+        setArr([...arr]);
         arr[j].color = ElementStates.Default;
         arr[j + 1].color = ElementStates.Default;
-        setArr([...arr]);
       }
       arr[arr.length - i - 1].color = ElementStates.Modified;
     }
