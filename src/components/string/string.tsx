@@ -75,6 +75,7 @@ export const StringComponent: React.FC = () => {
           type="submit"
           text="Развернуть"
           isLoader={isLoading}
+          disabled={inputValue ? false : true}
         />
       </form>
       <div className={styles.container}>
