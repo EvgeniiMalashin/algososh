@@ -76,6 +76,7 @@ export const StackPage: React.FC = () => {
             text="Добавить"
             isLoader={isAddLoading}
             disabled={!inputValue || isDisabled}
+            data-testid='addButton'
 
           />
           <Button
@@ -84,6 +85,7 @@ export const StackPage: React.FC = () => {
             isLoader={isDelLoading}
             onClick={handlePopStack}
             disabled={!arr.length || isDisabled}
+            data-testid='deleteButton'
           />
         </div>
         <Button
@@ -91,6 +93,7 @@ export const StackPage: React.FC = () => {
           text="Очистить"
           onClick={handleClearStack}
           disabled={!arr.length || isDisabled}
+          data-testid='clearButton'
         />
       </form>
       <div className={styles.circle}>

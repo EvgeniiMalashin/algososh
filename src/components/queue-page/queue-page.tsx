@@ -79,6 +79,7 @@ export const QueuePage: React.FC = () => {
             text="Добавить"
             isLoader={isAddLoading}
             disabled={!inputValue || queue.getTail() === 7 || isDisabled}
+            data-testid='addToQueueButton'
           />
           <Button
             type="button"
@@ -86,6 +87,7 @@ export const QueuePage: React.FC = () => {
             isLoader={isDelLoading}
             onClick={handleDequeue}
             disabled={queue.isEmpty() || isDisabled}
+            data-testid='deleteFromQueueButton'
           />
         </div>
         <Button
@@ -93,6 +95,7 @@ export const QueuePage: React.FC = () => {
           text="Очистить"
           onClick={handleClearQueue}
           disabled={queue.isEmpty() || isDisabled}
+          data-testid='clearQueueButton'
         />
       </form>
       <div className={styles.circle}>
