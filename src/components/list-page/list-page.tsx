@@ -262,6 +262,7 @@ export const ListPage: React.FC = () => {
             maxLength={4}
             onChange={handleChange}
             disabled={isDisabled}
+            data-testid='textInput'
           />
           <Button
             type="button"
@@ -270,6 +271,7 @@ export const ListPage: React.FC = () => {
             linkedList="small"
             isLoader={isLoadingAddHead}
             disabled={!inputValue || isDisabled}
+            data-testid='addHeadButton'
           />
           <Button
             type="button"
@@ -278,6 +280,7 @@ export const ListPage: React.FC = () => {
             linkedList="small"
             isLoader={isLoadingAddTail}
             disabled={!inputValue || isDisabled}
+            data-testid='addTailButton'
           />
           <Button
             type="button"
@@ -286,6 +289,7 @@ export const ListPage: React.FC = () => {
             linkedList="small"
             isLoader={isLoadingDeleteHead}
             disabled={!arr.length || isDisabled}
+            data-testid='deleteHeadButton'
           />
           <Button
             type="button"
@@ -294,6 +298,7 @@ export const ListPage: React.FC = () => {
             linkedList="small"
             isLoader={isLoadingDeleteTail}
             disabled={!arr.length || isDisabled}
+            data-testid='deleteTailButton'
           />
         </div>
         <div className={styles.container}>
@@ -306,6 +311,7 @@ export const ListPage: React.FC = () => {
             max={arr.length - 1}
             onChange={handleChangeIndex}
             disabled={isDisabled}
+            data-testid='indexInput'
           />
           <Button
             type="button"
@@ -314,6 +320,7 @@ export const ListPage: React.FC = () => {
             linkedList="big"
             isLoader={isLoadingAddIndex}
             disabled={!inputIndex || !inputValue || isDisabled || inputIndex > arr.length - 1 || inputIndex < 0}
+            data-testid='addIndexButton'
           />
           <Button
             type="button"
@@ -322,6 +329,7 @@ export const ListPage: React.FC = () => {
             linkedList="big"
             isLoader={isLoadingDeleteIndex}
             disabled={!inputIndex || isDisabled || inputIndex > arr.length - 1 || inputIndex < 0}
+            data-testid='deleteIndexButton'
           />
         </div>
       </form>
