@@ -133,6 +133,7 @@ export const SortingPage: React.FC = () => {
             isLoader={isLoading.isAscending}
             onClick={() => { onSortClick(Direction.Ascending) }}
             disabled={isLoading.isDescending}
+            data-testid='ascButton'
           />
           <Button
             type="button"
@@ -141,12 +142,14 @@ export const SortingPage: React.FC = () => {
             isLoader={isLoading.isDescending}
             onClick={() => { onSortClick(Direction.Descending) }}
             disabled={isLoading.isAscending}
+            data-testid='descButton'
           />
         </div>
         <Button
           type="submit"
           text="Новый массив"
           disabled={isLoading.isLoading}
+          data-testid='newMassiveButton'
         />
       </form>
       <div className={styles.container}>

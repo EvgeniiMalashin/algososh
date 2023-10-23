@@ -12,7 +12,7 @@ describe("Страница загружена", function () {
 		cy.get('button').should('be.disabled');
 	})
 
-	it('Алгоритм работает', () => {
+	it('Числа фибоначи должны выводится пользователю правильно по значению и по порядку', () => {
 		cy.get('input').clear();
 		cy.get('input').type('3').should('have.value', '3');
 		cy.get('button').contains('Расcчитать').click();

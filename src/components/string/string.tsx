@@ -70,12 +70,14 @@ export const StringComponent: React.FC = () => {
           isLimitText={true}
           maxLength={12}
           onChange={handleChange}
+          data-testid='textInput'
         />
         <Button
           type="submit"
           text="Развернуть"
           isLoader={isLoading}
           disabled={inputValue ? false : true}
+          data-testid='button'
         />
       </form>
       <div className={styles.container}>
